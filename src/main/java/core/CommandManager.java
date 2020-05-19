@@ -1,19 +1,19 @@
 package core;
 
-import core.commands.Unknown;
-import core.commands.Weather;
+import core.commands.*;
 
 import java.util.HashSet;
 
-/**
- * @author Arthur Kupriyanov
- */
+
 public class CommandManager {
     private static HashSet<Command> commands = new HashSet<>();
 
     static {
         commands.add(new Unknown("unknown"));
         commands.add(new Weather("weather"));
+        commands.add(new Begin("начать"));
+        commands.add(new Sale("акции"));
+        commands.add(new Menu("меню"));
 
     }
 

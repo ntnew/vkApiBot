@@ -51,6 +51,7 @@ public class VKManager {
         } catch (ApiException | ClientException e) {
             e.printStackTrace();
         }
+
         return null;
     }
 

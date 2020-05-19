@@ -1,5 +1,9 @@
 package vk;
 
+import com.google.gson.JsonElement;
+import com.vk.api.sdk.actions.Market;
+import com.vk.api.sdk.objects.market.*;
+import com.vk.api.sdk.actions.Orders;
 import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
@@ -7,6 +11,7 @@ import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.httpclient.HttpTransportClient;
 import com.vk.api.sdk.objects.messages.Message;
+import com.vk.api.sdk.objects.orders.Order;
 import com.vk.api.sdk.queries.messages.MessagesGetLongPollHistoryQuery;
 
 import java.io.FileInputStream;
@@ -39,13 +44,10 @@ public class VKCore {
             ts = vk.messages().getLongPollServer(actor).execute().getTs();
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Ошибка при загрузке файда конфигурации");
+            System.out.println("Ошибка при загрузке файла конфигурации");
         }
-
-
-
-
     }
+
 
     public GroupActor getActor() {
         return actor;
@@ -54,6 +56,7 @@ public class VKCore {
         return vk;
     }
     public Message getMessage() throws ClientException, ApiException {
+
 
         MessagesGetLongPollHistoryQuery eventsQuery = vk.messages()
                 .getLongPollHistory(actor)
@@ -90,8 +93,11 @@ public class VKCore {
 
             return messages.get(0);
         }
+
         return null;
     }
+
+    
 
 }
 

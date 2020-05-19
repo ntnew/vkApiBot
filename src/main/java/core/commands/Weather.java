@@ -18,7 +18,6 @@ public class Weather extends Command implements ServiceCommand {
     @Override
     public void exec(Message message) {
 
-
         new VKManager().sendMessage(getWeather(), message.getUserId());
     }
 

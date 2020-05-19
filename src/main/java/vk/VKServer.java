@@ -39,6 +39,8 @@ public class VKServer {
                 Thread.sleep(RECONNECT_TIME);
 
             }
+            String json= "";
+            //System.out.println(vkCore.getMarket());
         }
     }
 }
