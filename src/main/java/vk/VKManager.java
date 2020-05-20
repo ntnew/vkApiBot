@@ -5,6 +5,8 @@ import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.users.UserXtrCounters;
 import com.vk.api.sdk.queries.messages.MessagesSendQuery;
 
+import static core.modules.RandomId.setRandomId;
+
 /**
  * @author Arthur Kupriyanov
  */
@@ -25,7 +27,7 @@ public class VKManager {
             return;
         }
         try {
-            vkCore.getVk().messages().send(vkCore.getActor()).peerId(peerId).message(msg).execute();
+            vkCore.getVk().messages().send(vkCore.getActor()).peerId(peerId).randomId(setRandomId()).message(msg).execute();
         } catch (ApiException | ClientException e) {
             e.printStackTrace();
         }

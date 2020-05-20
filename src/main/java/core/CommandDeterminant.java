@@ -15,7 +15,7 @@ public class CommandDeterminant {
 
 
     public static Command getCommand(Collection<Command> commands, Message message) {
-        String body = message.getBody();
+        String body = message.getText();
 
         for (Command command : commands
         ) {

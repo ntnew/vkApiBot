@@ -1,0 +1,135 @@
+{
+  "one_time": false,
+  "buttons": [
+    [
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"2\"}",
+          "label": "Острая"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"3\"}",
+          "label": "Пепперони"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"4\"}",
+          "label": "Пиццапп"
+        },
+        "color": "primary"
+      }
+    ],
+    [
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"2\"}",
+          "label": "Тайская"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"3\"}",
+          "label": "Классическая"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"4\"}",
+          "label": "Супер Мясная"
+        },
+        "color": "primary"
+      }
+    ],
+    [{
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"1\"}",
+        "label": "Чикен барбекю"
+      },
+      "color": "primary"
+    },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"2\"}",
+          "label": "Баварская"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"4\"}",
+          "label": "Скажите чиииз"
+        },
+        "color": "primary"
+      }
+    ],
+    [{
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"1\"}",
+        "label": "Маргарита"
+      },
+      "color": "primary"
+    },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"2\"}",
+          "label": "Ветчина и грибы"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"3\"}",
+          "label": "Банан в карамели"
+        },
+        "color": "primary"
+      }
+    ],
+    [
+      {
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"1\"}",
+        "label": "Сырный цыплёнок"
+      },
+      "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"1\"}",
+          "label": "Курица и ананасы"
+        },
+        "color": "primary"
+      }
+    ],
+    [
+      {
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"5\"}",
+        "label": "Вернуться"
+      },
+      "color": "secondary"
+      }
+    ]
+  ]
+}

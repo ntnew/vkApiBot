@@ -13,11 +13,14 @@ import com.vk.api.sdk.httpclient.HttpTransportClient;
 import com.vk.api.sdk.objects.messages.Message;
 import com.vk.api.sdk.objects.orders.Order;
 import com.vk.api.sdk.queries.messages.MessagesGetLongPollHistoryQuery;
+import core.modules.Reader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
+
+import static vk.VKManager.vkCore;
 
 public class VKCore {
     private VkApiClient vk;
@@ -55,6 +58,9 @@ public class VKCore {
     public VkApiClient getVk() {
         return vk;
     }
+
+
+
     public Message getMessage() throws ClientException, ApiException {
 
 
@@ -67,7 +73,7 @@ public class VKCore {
         List<Message> messages = eventsQuery
                 .execute()
                 .getMessages()
-                .getMessages();
+                .getItems();
 
         if (!messages.isEmpty()){
             try {

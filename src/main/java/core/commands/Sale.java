@@ -17,6 +17,6 @@ public class Sale extends Command {
 
     @Override
     public void exec(Message message) {
-        new VKManager().sendMessage(getSaleMessage(), message.getUserId());
+        new VKManager().sendMessage(getSaleMessage(), message.getFromId());
     }
 }

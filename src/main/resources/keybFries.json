@@ -1,0 +1,38 @@
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"1\"}",
+        "label": "Картофель фри"
+      },
+      "color": "primary"
+    },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"2\"}",
+          "label": "Дольки фри"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"3\"}",
+          "label": "Наггетсы"
+        },
+        "color": "primary"
+      }
+    ],
+    [{
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"5\"}",
+        "label": "Вернуться"
+      },
+      "color": "secondary"
+    }]
+  ]
+}

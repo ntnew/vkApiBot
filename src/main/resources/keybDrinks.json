@@ -1,0 +1,46 @@
+{
+  "one_time": false,
+  "buttons": [
+    [{
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"1\"}",
+        "label": "Облепиховый морс"
+      },
+      "color": "primary"
+    },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"2\"}",
+          "label": "Клюквенный морс"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"3\"}",
+          "label": "Смородиновый морс"
+        },
+        "color": "primary"
+      },
+      {
+        "action": {
+          "type": "text",
+          "payload": "{\"button\": \"4\"}",
+          "label": "COCA-COLA"
+        },
+        "color": "primary"
+      }
+    ],
+    [{
+      "action": {
+        "type": "text",
+        "payload": "{\"button\": \"5\"}",
+        "label": "Вернуться"
+      },
+      "color": "secondary"
+    }]
+  ]
+}

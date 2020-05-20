@@ -1,19 +1,13 @@
 package core.commands;
 
-import com.vk.api.sdk.exceptions.ApiException;
-import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.messages.Message;
 import core.Command;
 import core.modules.Reader;
 import core.modules.Send;
-import vk.VKCore;
 import vk.VKManager;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-public class Begin extends Command {
-    public Begin(String name) {
+public class commandOrder extends Command {
+    public commandOrder(String name) {
         super(name);
     }
 
@@ -24,8 +18,8 @@ public class Begin extends Command {
 
     @Override
     public void exec(Message message) {
-        String filename = "C:\\Users\\Ahab\\BotOnJavaSDKExample\\src\\main\\resources\\keyboardStart.json";
-        new VKManager().sendMessage(getStartMessage(), message.getFromId());
+        String filename = "C:\\Users\\Ahab\\BotOnJavaSDKExample\\src\\main\\resources\\keyboardOrders.json";
+        new VKManager().sendMessage("Выбирай", message.getFromId());
         new Send().sendKeyboard(filename, message.getFromId());
 
     }
