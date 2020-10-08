@@ -4,6 +4,7 @@ import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 
 
+import static core.CommandManager.getDesc;
 import static core.modules.RandomId.setRandomId;
 import static vk.VKManager.vkCore;
 
@@ -16,7 +17,7 @@ public class Send {
                     .send(vkCore.getActor())
                     .peerId(peerId)
                     .randomId(setRandomId())
-                    .message("Воспользуйтесь клавиатурой!")
+                    .message(getDesc(6))
                     .unsafeParam("keyboard", Reader.readTxtFile(fileName))
                     .execute();
         } catch (ApiException | ClientException e) {

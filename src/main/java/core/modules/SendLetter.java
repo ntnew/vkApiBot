@@ -11,14 +11,15 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import static core.CommandManager.getDesc;
 import static core.modules.FileHelper.clearLetter;
 import static core.modules.FileHelper.readLetter;
 
 public class SendLetter extends Thread {
-    public static String header = "Здравствуйте. Клиент хочет заказать стол, перезвоните ему по номеру, " +
-            "указанному ниже.\n";
+//    public static String header = "Здравствуйте. Клиент хочет заказать стол, перезвоните ему по номеру, " +
+//            "указанному ниже.\n";
 
-    public static String subString = " Этописьмо создано автоматически. На него не нужно отвечать.";
+    //public static String subString = "\nЭтописьмо создано автоматически. На него не нужно отвечать.";
     public int userId;
 
     public SendLetter(int userId) {
@@ -55,7 +56,7 @@ public class SendLetter extends Thread {
 
             message.setSubject("Бронирование столика"); // subject line
 
-            message.setText(subString + readLetter(userId + ""));
+            message.setText(getDesc(7) + readLetter(userId + "") + getDesc(8));
 
 
             Transport transport = session.getTransport("smtp");

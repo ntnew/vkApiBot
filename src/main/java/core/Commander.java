@@ -10,8 +10,6 @@ import static core.modules.FileHelper.*;
 import static vk.VKServer.reserveQueue;
 
 public class Commander {
-
-
     /**
      * Обработка сообщений, получаемых через сервис Вконтакте. Имеет ряд дополнительной информации.
      * @param message сообщение (запрос) пользователя
@@ -56,8 +54,9 @@ public class Commander {
             new Send().sendKeyboard("keyboardStart.json",message.getFromId());
             reserveQueue.remove(message.getFromId() + "res6");
             clearLetter(message.getFromId()+"");
+        } else{
+            CommandDeterminant.getCommand(CommandManager.getCommands(), message).exec(message);
         }
-        else CommandDeterminant.getCommand(CommandManager.getCommands(), message).exec(message);
     }
 
 }
