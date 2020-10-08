@@ -4,6 +4,8 @@ import com.vk.api.sdk.objects.messages.Message;
 import core.Command;
 import vk.VKManager;
 
+import static core.modules.Reader.readTxtFile;
+
 /**
  * @author Arthur Kupriyanov
  */
@@ -15,6 +17,6 @@ public class Unknown extends Command {
 
     @Override
     public void exec(Message message) {
-        new VKManager().sendUniqueMessage("Неизвестная команда", message.getFromId());
+        new VKManager().sendUniqueMessage(readTxtFile("unknown.txt"), message.getFromId());
     }
 }
