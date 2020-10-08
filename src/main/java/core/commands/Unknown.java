@@ -15,6 +15,6 @@ public class Unknown extends Command {
 
     @Override
     public void exec(Message message) {
-        new VKManager().sendMessage("Неизвестная команда", message.getFromId());
+        new VKManager().sendUniqueMessage("Неизвестная команда", message.getFromId());
     }
 }

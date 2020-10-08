@@ -15,11 +15,11 @@ public class CommandDeterminant {
 
 
     public static Command getCommand(Collection<Command> commands, Message message) {
-        String body = message.getText();
+        String body = message.getText().toLowerCase();
 
         for (Command command : commands
         ) {
-                if (command.name.equals(body.split(" ")[0])) {
+                if (command.name.equals(body)) {
                     return command;
                 }
         }

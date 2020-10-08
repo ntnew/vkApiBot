@@ -1,6 +1,7 @@
 package vk;
 
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.vk.api.sdk.actions.Market;
 import com.vk.api.sdk.objects.market.*;
 import com.vk.api.sdk.actions.Orders;
@@ -58,7 +59,6 @@ public class VKCore {
     public VkApiClient getVk() {
         return vk;
     }
-
 
 
     public Message getMessage() throws ClientException, ApiException {

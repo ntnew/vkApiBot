@@ -2,37 +2,29 @@ package core.modules;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+import static org.apache.logging.log4j.core.impl.ThrowableFormatOptions.FILE_NAME;
 
 public class Reader {
+
+    public static String  programPath = System.getProperty("user.dir");
     public static String  readTxtFile(String fileName) {
-        String s = "";
-        // блок try/catch необходим, так как в результате
-        // чтения файла могут возникнуть ошибки
+        String  s = "";
+        List<String> lines = null;
+
         try {
-
-            // создаем экземпляр класса FileReader
-            FileReader tfr = new FileReader(fileName);
-            // создаем в памяти буфер для чтения 8Кб символов за раз
-            char[] buffer = new char[8096];
-
-            int chars = tfr.read(buffer);
-
-            // до тех пор пока есть символы в файле, читаем данные
-            // и выводим в консоль
-            while (chars != -1) {
-                s = s + String.valueOf(buffer, 0, chars);
-                System.out.println(String.valueOf(buffer, 0, chars));
-                chars = tfr.read(buffer);
-            }
-
-            // закрываем файл
-            tfr.close();
-
-            // отлавливаем исключение
+            lines = Files.readAllLines(Paths.get(programPath + "\\src\\main\\resources\\"+ fileName), StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        for(String line: lines){
+            s = s + line + "\n";
+        }
         return s;
-
     }
+
 }

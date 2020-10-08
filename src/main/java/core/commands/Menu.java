@@ -11,7 +11,7 @@ public class Menu extends Command {
     }
 
     private String getSaleMessage(){
-        String fileName = "C:\\Users\\Ahab\\BotOnJavaSDKExample\\src\\main\\resources\\menu.txt";
+        String fileName = "menu.txt";
         return Reader.readTxtFile(fileName);
     }
 

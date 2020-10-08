@@ -18,13 +18,13 @@ public class Begin extends Command {
     }
 
     private String getStartMessage(){
-        String fileName = "C:\\Users\\Ahab\\BotOnJavaSDKExample\\src\\main\\resources\\startPage.txt";
+        String fileName = "startPage.txt";
         return Reader.readTxtFile(fileName);
     }
 
     @Override
     public void exec(Message message) {
-        String filename = "C:\\Users\\Ahab\\BotOnJavaSDKExample\\src\\main\\resources\\keyboardStart.json";
+        String filename = "keyboardStart.json";
         new VKManager().sendMessage(getStartMessage(), message.getFromId());
         new Send().sendKeyboard(filename, message.getFromId());
 

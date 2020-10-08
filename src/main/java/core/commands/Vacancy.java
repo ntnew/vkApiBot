@@ -5,18 +5,19 @@ import core.Command;
 import core.modules.Reader;
 import vk.VKManager;
 
-public class Sale extends Command {
-    public Sale (String name) {
+public class Vacancy extends Command {
+
+    public Vacancy(String name) {
         super(name);
     }
 
-    private String getSaleMessage(){
-        String fileName = "sale.txt";
+    private String getVacancyMessage(){
+        String fileName = "vacancy.txt";
         return Reader.readTxtFile(fileName);
     }
 
     @Override
     public void exec(Message message) {
-        new VKManager().sendMessage(getSaleMessage(), message.getFromId());
+        new VKManager().sendMessage(getVacancyMessage(), message.getFromId());
     }
 }

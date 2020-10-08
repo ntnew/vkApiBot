@@ -9,14 +9,14 @@ public class CommandManager {
     private static HashSet<Command> commands = new HashSet<>();
 
     static {
+        commands.add(new ReserveTable("забронировать стол"));
         commands.add(new Unknown("unknown"));
         commands.add(new Weather("weather"));
-        commands.add(new Begin("Начать"));
-        commands.add(new Sale("Акции"));
-        commands.add(new Menu("Меню"));
-        commands.add(new commandOrder("Заказать"));
-        commands.add(new Begin("Вернуться"));
-        commands.add(new orderPizza("Пицца"));
+        commands.add(new Begin("начать"));
+        commands.add(new Sale("акции"));
+        commands.add(new Menu("меню"));
+        commands.add(new Vacancy("вакансии"));
+        commands.add(new Question("вопрос/отзыв"));
 
     }
 

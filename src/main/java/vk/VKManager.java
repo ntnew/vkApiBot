@@ -5,6 +5,10 @@ import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.users.UserXtrCounters;
 import com.vk.api.sdk.queries.messages.MessagesSendQuery;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import static core.modules.RandomId.setRandomId;
 
 /**
@@ -28,6 +32,20 @@ public class VKManager {
         }
         try {
             vkCore.getVk().messages().send(vkCore.getActor()).peerId(peerId).randomId(setRandomId()).message(msg).execute();
+        } catch (ApiException | ClientException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendUniqueMessage(String msg, int peerId){
+        if (msg == null){
+            System.out.println("null");
+            return;
+        }
+        Calendar calendar = new GregorianCalendar();
+        try {
+            vkCore.getVk().messages().send(vkCore.getActor()).peerId(peerId).randomId(peerId +
+                    calendar.get(Calendar.DAY_OF_MONTH) + calendar.get(Calendar.MONTH) ).message(msg).execute();
         } catch (ApiException | ClientException e) {
             e.printStackTrace();
         }
